@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Make a Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent-color: #d65e93;
+      --secondary-color:#5941F2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+     font-family: "Roboto", sans-serif;
+      background-color: #fefefe;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .payment-container {
+      max-width: 720px;
+      margin: 6vh auto;
+      padding: 2rem;
+      background-color: #f8f9fc;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--secondary-color);
+      font-size: 32px;
+      margin-bottom: 1.5rem;
+      font-weight:400;
+    }
+
+    form {
+      font-size: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight:400;
+      color: var(--secondary-color);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 1.2rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: var(--accent-color);
+      outline: none;
+    }
+
+    input[type="submit"] {
+      background-color: var(--accent-color);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #5941F2;
+    }
+
+    @media (max-width: 576px) {
+      .payment-container {
+        padding: 1.25rem;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container" data-aos="fade-up" data-aos-duration="700">
+    <h2 style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 21px;">Make a Payment</h2>
+
+   <form id="partnerForm" method="post" action="{% url 'make_payment' %}"> 
+  {% csrf_token %}
+
+  <label style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 21px;">Full Name:</label>
+  <input type="text" name="full_name" required>
+
+  <label style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 21px;">Email:</label>
+  <input type="email" name="email" required>
+
+  <label style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 21px;">Phone:</label>
+  <input type="text" name="phone" required>
+
+  <label style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 21px;">Amount (USD):</label>
+  <input type="number" name="amount" step="0.01" required>
+
+  <input type="submit" value="Pay Now">
+</form>
+
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+
+  <script>
+  const form = document.getElementById('partnerForm');
+  form.addEventListener('submit', function(e) {
+    // Delay reset slightly to allow submission event
+    setTimeout(() => {
+      form.reset();
+    }, 10);
+  });
+</script>
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,407 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+
+       body {
+     font-family: "Roboto", sans-serif;
+  }
+
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #00703c;
+    font-weight: 600;
+  }
+
+  .btn-success {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  .btn-success:hover {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  .btn-primary {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  .btn-primary:hover {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  footer a:hover {
+    color: #00703c !important;
+  }
+
+  .form-label {
+    font-weight: 600;
+  }
+
+  .nav-link {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .text-primary {
+    color: #00703c !important;
+  }
+
+  section#contact {
+    background-color: #f8f9fa !important;
+  }
+
+
+      :root {
+  --accent-color:#00703c;
+  --accent-hover: #00703c; /* Slightly darker on hover */
+
+  --secondary-color: #00703c;
+  --secondary-hover: #00703c;
+  --primary-accent: #00703c;
+}
+
+/* All nav links, desktop & mobile */
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: var(--secondary-hover);
+  border-bottom: 2px solid var(--secondary-hover); /* optional */
+}
+
+/* Solid Accent Button */
+.btn-accent {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 0;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: var(--accent-hover);
+  color: #fff;
+}
+
+/* Outline Accent Button */
+.btn-outline-accent {
+  background-color: #fff;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 0;
+}
+
+.btn-outline-accent:hover,
+.btn-outline-accent:focus {
+  background-color: var(--accent-color);
+  color: #fff;
+  border-color: var(--accent-color);
+}
+
+.grayscale-hover {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.grayscale-hover:hover {
+  filter: grayscale(0%) drop-shadow(0 0 5px #00703c);
+  transform: scale(1.05);
+}
+
+
+        .blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 1px solid #eee;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .category-link {
+    transition: color 0.3s ease, padding-left 0.3s ease;
+  }
+
+  .category-link:hover {
+    color: #00703c;
+    padding-left: 8px;
+  }
+
+  .read-more-btn:hover {
+    background-color: #00703c;
+    color: #fff !important;
+    border-color: #00703c;
+  }
+
+   .navbar-toggler {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .navbar-toggler:focus,
+  .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .sticky-sidebar {
+  position: fixed;
+  top: 25px;              /* Adjust to control how far from top it appears */
+  right: 150px;             /* Push it to the right side of screen */
+  width: 300px;            /* Set a fixed width */
+  z-index: 1000;
+}
+@media (max-width: 768px) {
+  .sticky-sidebar {
+    position: static;
+    width: auto;
+    right: 0;
+  }
+}
+
+    </style>
+  </head>
+<body>
+  <nav class="navbar navbar-light py-1 px-4 px-md-5 " style="font-size: 1rem;">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+          <!-- Logo (Left) -->
+    <a class="navbar-brand me-auto" href="#">
+      <img src="https://i.ibb.co/zhMCfxYR/3dca4dc8-a7bc-4b9b-a31c-19cbaa815244-removebg-preview.png" alt="Logo" class="img-fluid" style="max-height: 60px;">
+      <label for="" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:600;font-style: normal;font-size:2rem;color: #00703c;">ZORUDENA UG</label>
+    </a>
+    
+      <!-- Social Media Links (Left) -->
+      <div class="me-3">
+        <a href="#" class="text-dark me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-facebook" style="color: #00703c;"></i></a>
+        <a href="#" class="text-dark me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-twitter" style="color: #00703c;"></i></a>
+        <a href="#" class="text-dark me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-instagram" style="color: #00703c;"></i></a>
+      </div>
+  
+      <!-- Contact Info (Right) -->
+      <div class="text-end small">
+        <span class="me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-telephone-fill" style="color: #00703c;"></i> +256785394282</span>
+        <span  style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-envelope-fill" style="color: #00703c;"></i> info.zorudenauganda2019@gmail.com</span>
+      </div>
+    </div>
+  </nav>
+  
+
+<!-- Main Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light py-3 px-3 " style="font-size: 1rem; margin-bottom: 0;">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Toggler (Mobile Only) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-aos="fade-up">
+      <span class="navbar-toggler-icon" style="color: #00703c;"></span>
+    </button>
+
+    <!-- Centered Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{% url 'about_us' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">About Us</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/programs/' %}active{% endif %}" href="{% url 'programs' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Our Programs</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/blog/' %}active{% endif %}" href="{% url 'blog' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Blog</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact_us' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Donate Button (Right) -->
+    <div class="ms-auto d-none d-lg-block">
+      <a href="{% url 'make_payment' %}" class="btn btn-lg" style="background-color: #00703c; font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem; color: #fff;border-radius:0;">Donate Now</a>
+    
+    
+  </div>
+</nav>
+
+
+<!-- Latest Updates Hero Section -->
+<section class="about-us-intro text-white d-flex align-items-center position-relative" style="
+  background: url('https://i.ibb.co/4wfMRZgH/a2802147-c0ae-4272-8397-e78b3ccc2d1b1.jpg') no-repeat center center/cover;
+  height: 38vh;
+  padding: 1.5rem;
+  overflow: hidden;
+ 
+  background-size: cover;       /* Ensures the container is fully covered */
+  background-position: 30%; /* Adjust to keep head in view */
+  background-repeat: no-repeat;
+  background-position: center 24%;
+" data-aos="fade-up">
+
+
+  <div class="container" style="padding: 24px;">
+    <div class="row">
+      <div class="col-md-4">
+        <h1 class="display-5" style="margin-bottom: 80px; color:white;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 700;font-style: normal;font-size: 3.75 rem;">News</h1>
+      </div>
+    </div>
+  </div>
+   <!-- Bezier Curve SVG -->
+  <svg class="position-absolute bottom-0 start-0 w-100" height="60" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,0 1080,60 1440,30 L1440,60 L0,60 Z" fill="#00703c"></path>
+  </svg>
+
+</section>
+
+<section class="py-5 px-3" data-aos="fade-up">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <div class="container py-4">
+
+      <!-- Heading & Lead -->
+      <div class="text-center mb-4">
+        <h2 class="fw-bold" style="font-family: Quicksand, sans-serif; font-size: 24px;">
+          Latest Stories & Updates
+        </h2>
+        <p class="text-muted" style="font-family: Quicksand, sans-serif; font-size: 16px;">
+          Discover how our programs are making an impact through real stories from the ground.
+        </p>
+      </div>
+
+      <!-- Blog Categories -->
+      <div class="mb-4 px-2">
+        <div class="p-3 shadow-sm border" style="background-color: #00703c;">
+          <h4 class="mb-3 text-white" style="font-family: Quicksand, sans-serif; font-size: 18px;">Browse by Category</h4>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="{% url 'blog_by_category' category='Education' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Education and Awareness
+            </a>
+            <a href="{% url 'blog_by_category' category='Child Protection' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Economic Empowerment
+            </a>
+            <a href="{% url 'blog_by_category' category='Health and Nutrition' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Community Health
+            </a>
+            <a href="{% url 'blog_by_category' category='Economic Empowerment' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Environmental Protection
+            </a>
+            <a href="{% url 'blog_by_category' category='Adolescent SRHR' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Human Rights & Governance
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Posts Grid -->
+      {% if posts %}
+      <div class="row row-cols-1 row-cols-md-2 g-3 mt-2">
+        {% for post in posts %}
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+
+            <!-- Image -->
+            {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}"
+                 class="card-img-top"
+                 style="height: 180px; object-fit: cover;">
+            {% else %}
+            <img src="https://via.placeholder.com/600x400" alt="No Image"
+                 class="card-img-top"
+                 style="height: 180px; object-fit: cover;">
+            {% endif %}
+
+            <!-- Content -->
+            <div class="card-body py-3 px-3">
+              <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-size: 17px; font-weight: 600;">
+                {{ post.title|striptags|truncatechars:60 }}
+              </h5>
+              <p class="card-text text-muted mb-1" style="font-family: Quicksand, sans-serif; font-size: 14px;">
+                Posted on {{ post.date_posted|date:"F j, Y" }}
+              </p>
+            </div>
+
+            <!-- Footer -->
+            <div class="card-footer bg-transparent border-0 text-start px-3 pb-3">
+              <a href="{% url 'blog_detail' slug=post.slug %}"
+                 class="btn btn-sm px-3"
+                 style="background-color:#00703c; color: white; border-radius: 20px; font-family: Montserrat, sans-serif; font-size: 14px;">
+                Read More →
+              </a>
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="text-danger mt-4" style="background-color: #f8bad5;">No blog posts found.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+
+
+      
+       <!-- Footer -->
+<footer class="text-white bg-dark">
+  <div class="container p-4" style="font-size: 1rem;">
+    <div class="row align-items-center justify-content-between g-3">
+      <div class="col-12 col-md-auto mb-3 mb-md-0">
+           <img src="https://i.ibb.co/zhMCfxYR/3dca4dc8-a7bc-4b9b-a31c-19cbaa815244-removebg-preview.png" alt="Logo" class="img-fluid" style="max-height: 60px;">
+      </div>
+      <div class="col-12 col-md">
+        <ul class="nav justify-content-center justify-content-md-start flex-wrap">
+          <li class="nav-item"><a href="{% url 'about_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size:1.0625rem;">About Us</a></li>
+          <li class="nav-item"><a href="{% url 'programs' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Our Programs</a></li>
+          <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Blogs</a></li>
+          <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-auto">
+        <a href="{% url 'make_payment' %}" class="btn btn-success btn-lg" style="border-radius: 0px;color: #ffffff; background-color:#00703c;font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;border-width: 0;">Donate Now</a>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col text-center">
+        <a href="#" class="text-white text-decoration-none me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Privacy Policy</a>
+        <a href="#" class="text-white text-decoration-none" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+             <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,  // Animation duration (ms)
+    once: true      // Only animate once
+  });
+</script>
+        </body>
+</html>

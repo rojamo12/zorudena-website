@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent-color: #d65e93;
+      --secondary-color: #5941F2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      padding: 0;
+      background-color: #fefefe;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .redirect-box {
+      text-align: center;
+      background-color: #f8f9fc;
+      padding: 2rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      max-width: 460px;
+      width: 90%;
+    }
+
+    h2 {
+      color: var(--secondary-color);
+      margin-bottom: 1rem;
+      font-size: 22pt;
+    }
+
+    p {
+      font-size: 15pt;
+      color: #555;
+    }
+
+    .loader {
+      margin: 1.5rem auto 0;
+      width: 45px;
+      height: 45px;
+      border: 5px solid #ddd;
+      border-top: 5px solid var(--accent-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="redirect-box" data-aos="fade-up" data-aos-duration="700">
+    <h2 style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 21px;">Redirecting...</h2>
+    <p style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 21px;">Please wait while we securely connect you to the payment gateway.</p>
+    <div class="loader"></div>
+
+    <form id="dpoForm" method="post" action="https://secure.3gdirectpay.com/payv2.php">
+      {% for key, value in data.items %}
+        <input type="hidden" name="{{ key }}" value="{{ value }}">
+      {% endfor %}
+    </form>
+  </div>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+
+    // Auto-submit form after short delay
+    setTimeout(() => {
+      document.getElementById('dpoForm').submit();
+    }, 1200);
+  </script>
+
+</body>
+</html>
+
+

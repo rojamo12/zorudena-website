@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ post.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent-color: #d65e93;
+      --secondary-color: #3a8dcc;
+    }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      font-size: 22pt;
+      color: var(--secondary-color);
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+
+    .text-muted {
+      font-size: 15pt;
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+    }
+
+    img {
+      border: 3px solid var(--accent-color);
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      max-width: 100%;
+    }
+
+    p {
+      font-size: 15pt;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-size: 1rem;
+      padding: 0.6em 1.5em;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #2f77b4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" data-aos="fade-up" data-aos-duration="800">
+    <h2>{{ post.title }}</h2>
+
+    <p class="text-muted">Posted on {{ post.date_posted|date:"F d, Y" }}</p>
+
+    {% if post.image %}
+      <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    {% endif %}
+
+    <p>{{ post.content }}</p>
+
+    <a href="{% url 'blog' %}" class="btn">Back to Blog</a>
+  </div>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+</body>
+</html>

@@ -1,0 +1,975 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+     <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=health_and_safety" />
+ 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ 
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+ <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+ <style>
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 40
+}
+
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #00703c;
+    font-weight: 600;
+  }
+
+  .btn-success {
+    background-color: hsl(0, 90%, 54%);
+    border-color:hsl(0, 90%, 54%);
+  }
+
+  .btn-success:hover {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  .btn-primary {
+    background-color: #5941F2;
+    border-color: #5941F2;
+  }
+
+  .btn-primary:hover {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  footer a:hover {
+    color: #00703c  !important;
+  }
+
+  .form-label {
+    font-weight: 600;
+  }
+
+  .nav-link {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .text-primary {
+    color: #00703c !important;
+  }
+
+  section#contact {
+    background-color: #f8f9fa !important;
+  }
+
+:root {
+  --accent-color:#00703c;
+  --accent-hover: #00703c; /* Slightly darker on hover */
+
+  --secondary-color: #00703c;
+  --secondary-hover: #00703c;
+  --primary-accent: #d65e93; ;
+}
+
+/* All nav links, desktop & mobile */
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: var(--secondary-hover);
+  border-bottom: 2px solid var(--secondary-hover); /* optional */
+}
+
+/* Solid Accent Button */
+.btn-accent {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 0;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: var(#00703c);
+  color: #ffffff;
+}
+
+/* Outline Accent Button */
+.btn-outline-accent {
+  background-color: #fff;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 0;
+}
+
+.btn-outline-accent:hover,
+.btn-outline-accent:focus {
+  background-color: var(#00703c);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+
+.grayscale-hover {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.grayscale-hover:hover {
+  filter: grayscale(0%) drop-shadow(0 0 5px #00703c);
+  transform: scale(1.05);
+}
+
+
+ .partner-section {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .partner-carousel {
+    display: flex;
+    animation: scroll-left 30s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .partner-logo {
+    flex: 0 0 auto;
+    margin: 0 2rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+
+  .partner-logo:hover {
+    filter: grayscale(0%) drop-shadow(0 0 5px #00703c);
+    transform: scale(1.05);
+  }
+
+  /* Duplicate logos for seamless looping */
+  .carousel-track {
+    display: flex;
+  }
+
+   .btn:hover {
+    opacity: 0.9;
+  }
+
+
+    .btn:hover {
+    background-color: #00703c !important;
+    color: #fff !important;
+    border-color:#00703c !important;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    transition: transform 0.3s ease;
+  }
+
+    .navbar-toggler {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .navbar-toggler:focus,
+  .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+
+  #zorudenaText.text-collapsed {
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    max-height: 5.5em; /* approximately 3.5 lines */
+    overflow: hidden;
+  }
+
+  #zorudenaText.text-expanded {
+    max-height: 100em; /* large enough to show full content */
+    display: block;
+  }
+
+
+
+@keyframes fadeInSection {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeInSection 1.5s ease-out both;
+}
+
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-stagger {
+  opacity: 0;
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+
+.delay-0 {
+  animation-delay: 0.2s;
+}
+
+.delay-1 {
+  animation-delay: 0.6s;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+/* animate hero section */
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+}
+
+.pulse-text {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes slideFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-fade-up {
+  animation: slideFadeUp 1.5s ease-out forwards;
+}
+
+
+/* animate about text*/
+@keyframes slideTextRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.text-slide-right {
+  animation: slideTextRight 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* animate about img*/
+@keyframes slideImageLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(80px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.image-slide-left {
+  animation: slideImageLeft 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+.image-delay {
+  animation-delay: 0.3s;
+}
+
+/* animate impact section*/
+@keyframes flipTwice {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotateY(360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(720deg);
+    opacity: 1;
+  }
+}
+
+.aos-flip-twice {
+  animation: flipTwice 4s ease forwards;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  opacity: 0;
+}
+
+/* Animate logos */
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo-track {
+  display: flex;
+  gap: 40px;
+  animation: scrollLogos 5s linear infinite;
+  width: max-content;
+}
+
+.partner-logo {
+  height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%);
+}
+
+/* Animation */
+@keyframes pulseLogo {
+  0%, 100% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.1); /* Slightly larger */
+  }
+}
+
+.logo-pulse {
+  animation: pulseLogo 2s infinite ease-in-out;
+}
+ /* team */
+
+.card-img-top {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto; /* centers the image */
+}
+
+  </style>
+  </head>
+<body>
+
+ <nav class="navbar navbar-light py-1 px-4 px-md-5 " style="font-size: 1rem;">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+          <!-- Logo (Left) -->
+    <a class="navbar-brand me-auto" href="#">
+      <img src="https://i.ibb.co/zhMCfxYR/3dca4dc8-a7bc-4b9b-a31c-19cbaa815244-removebg-preview.png" alt="Logo" class="img-fluid" style="max-height: 60px;">
+      <label for="" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:600;font-style: normal;font-size:2rem;color: #00703c;">ZORUDENA UG</label>
+    </a>
+    
+      <!-- Social Media Links (Left) -->
+      <div class="me-3">
+        <a href="#" class="text-dark me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-facebook" style="color: #00703c;"></i></a>
+        <a href="#" class="text-dark me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-twitter" style="color: #00703c;"></i></a>
+        <a href="#" class="text-dark me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-instagram" style="color: #00703c;"></i></a>
+      </div>
+  
+      <!-- Contact Info (Right) -->
+      <div class="text-end small">
+        <span class="me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-telephone-fill" style="color: #00703c;"></i> +256785394282</span>
+        <span  style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-envelope-fill" style="color: #00703c;"></i> info.zorudenauganda2019@gmail.com</span>
+      </div>
+    </div>
+  </nav>
+  
+
+<!-- Main Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light py-3 px-3 " style="font-size: 1rem; margin-bottom: 0;">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Toggler (Mobile Only) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-aos="fade-up">
+      <span class="navbar-toggler-icon" style="color: #00703c;"></span>
+    </button>
+
+    <!-- Centered Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{% url 'about_us' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">About Us</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/programs/' %}active{% endif %}" href="{% url 'programs' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Our Programs</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/blog/' %}active{% endif %}" href="{% url 'blog' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Blog</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact_us' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Donate Button (Right) -->
+    <div class="ms-auto d-none d-lg-block">
+      <a href="{% url 'make_payment' %}" class="btn btn-lg" style="background-color: #00703c; font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem; color: #fff;border-radius:0;">Donate Now</a>
+    
+    
+  </div>
+</nav>
+<section class="d-flex align-items-center justify-content-center text-dark p-4 animate-fade-in"
+  style="height: calc(100vh - 96px); position: relative; z-index: 1; overflow: hidden; 
+         background: url('https://i.ibb.co/FbXRJVkP/15.jpg') no-repeat center center / cover;">
+
+    <!-- ✅ Green brand shadow overlay -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+              background-color: rgba(0, 112, 60, 0.5); z-index: 1;"></div>
+
+<!-- ✅ Foreground content with staggered animation -->
+<div class="container text-center mb-5 mb-lg-0"
+     style="border-radius: 8px; max-width: 720px; position: relative; z-index: 2;">
+  
+<h1 class="text-white fw-bold pulse-text slide-fade-up mt-3" style="font-size: 3.125rem;">
+ For a prosperous community of Zombo district
+</h1>
+
+  <p class="text-light fade-in-stagger delay-1" style=" font-size: 1.0625rem;">
+    We work with all stakeholders in development to eradicate poverty, cherish justice by identification of the needs natural endowment and potentials in the people.
+  </p>
+   <a href="{% url 'make_payment' %}" class="btn btn-lg mt-3" style="background-color: #00703c; font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem; color: #fff;border-radius:0;">Donate Now</a>
+  <a href="{% url 'contact_us' %}"
+     class="btn btn-light mt-3 fade-in-stagger delay-2"
+     style="border-radius: 0px; color: #00703c;font-size:1.0625rem;margin-left: 8px;font-optical-sizing: auto;padding: 8px 4px;">
+    Get Involved Today 
+  </a>
+
+</div>
+
+
+</section>
+
+<section class="py-5 text-dark">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Text Column with Slide-in from Left -->
+      <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+        <h5 style="font-family: Montserrat, sans-serif; font-weight: 700; font-size: 3.125rem; margin-bottom: 1.5rem;">
+          ZORUDENA: Empowering Our Community
+        </h5>
+        <p style="font-family: Quicksand, sans-serif; font-size: 1.0625rem; line-height: 1.7;">
+          Founded in 2019 in Zombo, ZORUDENA empowers vulnerable women, young mothers, and children through real impact.
+          We deliver education, healthcare, economic opportunities, and environmental solutions—restoring dignity, protecting rights, and transforming local communities.
+          
+        </p>
+        <a  href="{% url 'programs' %}" class="btn mt-3"
+           style="color:#00703c; border-radius: 0px; font-family: Montserrat, sans-serif; font-size:1.0625rem;text-decoration: underline;">
+          Join us in creating lasting change.
+        </a>
+      </div>
+
+      <!-- Image Column with AOS animations (slide from right, staggered) -->
+      <div class="col-md-6 position-relative d-flex justify-content-center align-items-center" style="height: 400px;">
+        
+        <!-- Background Image -->
+        <img src="https://i.ibb.co/JW5bxz1S/IMG-20250313-WA0000.jpg" 
+             class="img-fluid shadow position-absolute"
+             alt="Impact 2"
+             data-aos="fade-left"
+             data-aos-delay="200"
+             style="width: 65%; transform: rotate(-3deg); top: 10px; left: 20px; z-index: 1;">
+
+        <!-- Foreground Image -->
+        <img src="https://i.ibb.co/4wfMRZgH/a2802147-c0ae-4272-8397-e78b3ccc2d1b1.jpg"
+             class="img-fluid shadow position-absolute"
+             alt="Impact 1"
+             data-aos="fade-left"
+             data-aos-delay="400"
+             style="width: 65%; transform: rotate(3deg); top: 140px; left: 100px; z-index: 2;">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Impact Section -->
+<section class="py-5" style="background-color: rgba(0, 112, 60, 0.6);" data-aos="fade-up">
+  <div class="container" style="max-width: 92%;">
+    <div class="row g-4 align-items-start">
+
+      <!-- Column 1: Title -->
+      <div class="col-md-4 d-flex align-items-center justify-content-center" data-aos="fade-right">
+        <h3 style="color: #ffffff; font-family: Quicksand, sans-serif; font-weight: 700; font-size: 3.125rem; text-align: center;">
+          Our Impact
+        </h3>
+      </div>
+
+      <!-- Column 2: Heading + 3 Cards -->
+      <div class="col-md-8" data-aos="fade-left">
+        <!-- Two-line heading -->
+        <h4 style="color:white; font-family: Quicksand, sans-serif; font-weight: 500; font-size:1.0625rem; line-height: 1.4; text-align: left; margin-bottom: 1.5rem;">
+          Every life we touch tells a story of change. At ZORUDENA, we don’t just run programs—we shift futures. From equipping young mothers with skills, to ensuring children stay in school, to protecting our environment—we create real, lasting impact.
+          
+        </h4>
+
+        <!-- Three Cards in a Row -->
+        <div class="row g-3">
+          <!-- Card 1 -->
+          <div class="col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="100">
+            <div class="p-4 rounded h-100" style="background-color: hsl(152, 100%, 32%); box-shadow: 0 4px 6px #00703c;">
+              <h3 class="count-up" data-target="100"
+                  style="font-family: Quicksand, sans-serif; font-weight: 500; font-size: 2rem; color: #FFFFFF;">0</h3>
+              <p class="mb-0" style="color: hsl(208, 7%, 80%); font-size: 1rem;">Children Reached</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4 col-sm-6" data-aos="flip-up" data-aos-delay="200">
+            <div class="p-4 rounded h-100" style="background-color: hsl(152, 100%, 32%); box-shadow: 0 4px 6px #00703c;">
+              <h3 class="count-up" data-target="500"
+                  style="font-family: Quicksand, sans-serif; font-weight: 500; font-size: 2rem; color: #FFFFFF;">0</h3>
+              <p class="mb-0" style="color: hsl(208, 7%, 80%); font-size: 1rem;">Families Supported</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4 col-sm-6" data-aos="flip-right" data-aos-delay="300">
+            <div class="p-4 rounded h-100" style="background-color: hsl(152, 100%, 32%); box-shadow: 0 4px 6px #00703c;">
+              <h3 class="count-up" data-target="12000"
+                  style="font-family: Quicksand, sans-serif; font-weight: 500; font-size: 2rem; color: #FFFFFF;">0</h3>
+              <p class="mb-0" style="color: hsl(208, 7%, 80%); font-size: 1rem;">Lives Impacted</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background:linear-gradient(hsl(0, 0%, 97%),hsl(0, 0%, 95%))" data-aos="fade-up">
+  <div class="container py-4 px-4">
+    <!-- Section Title -->
+    <h4 class="text-center mb-3" style="
+      font-family: Quicksand, sans-serif;
+      font-weight: 700;
+      font-size: 3.125rem;
+      line-height: 1.25;
+    ">
+      Testimonials
+    </h4>
+    
+    <!-- Subtext -->
+    <p class="text-center mb-4" style="
+      font-family: Quicksand, sans-serif;
+      font-weight: 400;
+      font-size: 1.0625rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #2E2E4A;
+    ">
+      The results speak for themselves—but the people speak louder.
+      Every story you read here is proof that ZORUDENA’s work is changing lives. From empowered women to educated children, their voices show what’s possible when support meets action.
+    </p>
+
+    <!-- Testimonials -->
+    <div class="row g-4 justify-content-center">
+
+      <!-- Testimonial 1 -->
+      <div class="col-md-4" data-aos="fade-right">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body d-flex" style="background-color: #ffffff;box-shadow: 0 4px 6px #f2f2f2;">
+            <img src="https://i.ibb.co/tpTWZv8v/testimonial.jpg" alt="Grace A." class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
+            <div>
+              <h6 class="mb-1" style="font-family: Quicksand, sans-serif; font-weight: 500;font-size: 1.0625rem;">Thorac Mary</h6>
+              <p class="mb-2" style="font-family: Quicksand, sans-serif;font-weight: 400; font-size: 1.0625rem;color: hsl(0, 90%, 54%);">Single Mother</p>
+              <p style="font-family: Quicksand, sans-serif; font-weight: 400;font-size: 1.125rem;">
+               Thanks to ZORUDENA, I can provide for my family and send my daughter to school.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body d-flex" style="background-color: #ffffff;box-shadow: 0 4px 6px #f2f2f2;">
+            <img src="https://i.ibb.co/8nd6q3Wy/closeup-shot-black-male-child-holding-notebook-education-concept.jpg"  alt="Grace A." class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
+            <div>
+              <h6 class="mb-1" style="font-family: Quicksand, sans-serif; font-weight: 500;font-size: 1.0625rem;"> Amiya Scovia</h6>
+              <p class="mb-2" style="font-family: Quicksand, sans-serif;font-weight: 400; font-size: 1.0625rem;color: hsl(0, 90%, 54%);">Student</p>
+              <p style="font-family: Quicksand, sans-serif; font-weight: 400;font-size:1.0625rem;">
+               I never thought I could return to school. ZORUDENA helped me believe in myself again.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="col-md-4" data-aos="fade-left">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body d-flex" style="background-color: #ffffff;box-shadow: 0 4px 6px #f2f2f2;">
+            <img src="https://i.ibb.co/JFH32qkw/IMG-00972.jpg" alt="Grace A." class="rounded-circle me-3" style="width: 80px; height: 80px; object-fit: cover;">
+            <div>
+              <h6 class="mb-1" style="font-family: Quicksand, sans-serif; font-weight: 500;font-size: 1.0625rem;">Ayerango Janet </h6>
+              <p class="mb-2" style="font-family: Quicksand, sans-serif;font-weight: 400; font-size: 1.0625rem;color: hsl(0, 90%, 54%);">Zombo District</p>
+              <p style="font-family: Quicksand, sans-serif; font-weight: 400;font-size:1.0625rem;">
+              Before ZORUDENA, I had no income. Today, I run my own small business and support my children
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="partner-section py-4 partner-logos-section"  style="background-color:#ffffff;">
+  <div class="container text-center">
+    <h4 class="mb-4" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 700;font-style: normal; font-size: 3.125rem;;">
+      Our Partners & Sponsors
+    </h4>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4  logo-slider">
+      
+        <!-- Partner Card 1 -->
+      <div class="col logo-track" style="margin: 0 auto;">
+        <div class="card border-0 h-100 text-center">
+          <img src="data:image/jpeg;base64,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" 
+               class="rounded-circle mx-auto d-block mt-3 logo-pulse" 
+               alt="Logo" style="width: 100px;margin: 0 auto;">
+        </div>
+      </div>
+
+      <!-- Partner Card 2 -->
+      <div class="col logo-track" style="margin: 0 auto;">
+        <div class="card border-0 h-100 text-center">
+          <img src="data:image/png;base64,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" 
+               class="rounded-circle mx-auto d-block mt-3 logo-pulse" 
+               alt="Logo" style="width: 100px;">
+        </div>
+      </div>
+
+      <!-- Partner Card 3 -->
+      <div class="col logo-track" style="margin: 0 auto;">
+        <div class="card border-0 h-100 text-center">
+          <img src="data:image/png;base64,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" 
+              class="rounded-circle mx-auto d-block mt-3 logo-pulse" 
+               alt="Logo" style="width: 100px;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="text-center position-relative py-5" style="background-color: #00703c;">
+  <div class="container px-4 py-0">
+    <div class="row align-items-center justify-content-between">
+
+      <!-- Left Column: Image -->
+      <div class="col-md-6 mb-4 mb-md-0 text-center" data-aos="fade-right">
+        <img src="https://i.ibb.co/Hf6ms0dH/IMG-0948.jpg"
+             alt="Partner with Us Illustration" class="img-fluid" style="max-height: 400px;">
+      </div>
+
+      <!-- Right Column: Text Content -->
+      <div class="col-md-6 text-start p-4" data-aos="fade-left">
+        <h2 class="fw-bold mb-3" style="color: #ffffff; font-family: Quicksand, sans-serif; font-size: 3.125rem;">
+          Partner with Us
+        </h2>
+
+        <p class="mb-4" style="font-family: Quicksand, sans-serif; font-size: 1.0625rem; color: #ffffff;">
+          Change doesn’t happen alone—and that’s where you come in. Whether you're an individual, organization, or donor, your partnership can unlock real opportunities for vulnerable women, young mothers, and children across Zombo District where poverty is at its climax leading to low levels of education and livelihood to the vulnerable families
+        </p>
+
+        <a href="donate.html"
+           class="btn"
+           data-aos="zoom-in"
+           data-aos-delay="200"
+           style="border-radius: 0px; background-color: white; color: #00703c;
+                  font-family: Montserrat, sans-serif; font-weight: 400; font-size: 1.0625rem; padding: 10px 24px;
+                  transition: all 0.3s ease;">
+          Become a Partner
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Team Section -->
+<section id="meet-the-team" class="py-5" data-aos="fade-up">
+  <div class="container p-4">
+
+    <!-- Main Heading -->
+    <h4 class="text-center mb-3"
+        data-aos="fade-down"
+        style="padding-left: 10px; line-height: 1.25; font-family: Quicksand, sans-serif; font-weight: 700; font-size: 3.125rem;">
+      Meet Our Team
+    </h4>
+
+    <!-- Paragraph -->
+    <p class="text-center mb-5"
+       data-aos="fade-up"
+       data-aos-delay="100"
+       style="max-width: 700px; margin: 0 auto; font-family: Quicksand, sans-serif; font-size: 1.0625rem; color: #444;">
+      ZORUDENA is led by young, empowered women who rise from the very communities we serve. With lived experience, passion, and purpose, our team brings energy, empathy, and bold solutions to the forefront of change. <strong>Meet the local leaders transforming lives—and join us in driving the future of community-led impact.</strong> 
+    </p>
+
+    <!-- Team Members -->
+    <div class="row g-4 justify-content-center mb-3">
+
+           <!-- Team Member 4 -->
+      <div class="col-md-3" data-aos="fade-left" data-aos-delay="400">
+        <div class="card border-0">
+          <img src="https://i.ibb.co/5g81TgBg/f444ed48-064a-48ed-bcbc-57ef8c16fe21-removebg-preview.png" class="card-img-top" alt="Giramia Sylvia">
+          <div class="card-body text-center">
+            <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.0625rem;">Wilembe John</h5>
+            <p style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.3125rem;">Executive Director</p>
+          </div>
+        </div>
+      </div>
+
+                  <!-- Team Member 5 -->
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="card border-0">
+          <img src="https://i.ibb.co/PvvTwrn1/0d129523-db60-4a89-9e5f-8bb7cf17bec4-removebg-preview-2.png" class="card-img-top" alt="Acen Devia Okero">
+          <div class="card-body text-center">
+            <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.0625rem;">Malengrwoth Brenda</h5>
+            <p style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.3125rem;">Programs Manager</p>
+          </div>
+        </div>
+      </div>
+      <!-- Team Member 1 -->
+      <div class="col-md-3" data-aos="fade-right" data-aos-delay="100">
+        <div class="card border-0">
+          <img src="https://i.ibb.co/Zp54cXH8/IMG-0892.jpg"  class="card-img-top" alt="Otingcwinyu Jackson">
+          <div class="card-body text-center">
+            <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.0625rem;">Jackson Otingcwinyu</h5>
+            <p style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.3125rem;">Programs Officer</p>
+          </div>
+        </div>
+      </div>
+
+            <!-- Team Member 2 -->
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="card border-0">
+          <img src="https://i.ibb.co/mCt4BzFr/Untitled-design-5-removebg-preview-1.png" class="card-img-top" alt="Acen Devia Okero">
+          <div class="card-body text-center">
+            <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.0625rem;">Ajolorwoth Fridah</h5>
+            <p style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.3125rem;">Trainning Assistant</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="card border-0">
+          <img src="https://i.ibb.co/bgXrvX4P/Untitled-design-3-removebg-preview-1.png" class="card-img-top" alt="Acen Devia Okero">
+          <div class="card-body text-center">
+            <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.0625rem;">Acen Devia Okero</h5>
+            <p style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.3125rem;">Promic Coordinator Paidha Town Council</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 3 -->
+      <div class="col-md-3" data-aos="fade-down" data-aos-delay="300">
+        <div class="card border-0">
+          <img src="https://i.ibb.co/SwxbgBCH/Untitled-design4-removebg-preview-2.png" class="card-img-top" alt="Nyalum Collines">
+          <div class="card-body text-center">
+            <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.0625rem;">Nyalum Collines</h5>
+            <p style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.3125rem;">Promic Coordinator Kaya</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 4 -->
+      <div class="col-md-3" data-aos="fade-left" data-aos-delay="400">
+        <div class="card border-0">
+          <img src="https://i.ibb.co/YB6nLgnt/Untitled-design-4.png" class="card-img-top" alt="Giramia Sylvia">
+          <div class="card-body text-center">
+            <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.0625rem;">Atimango Gladies</h5>
+            <p style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.3125rem;">Accountant</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Team Member 4 -->
+      <div class="col-md-3" data-aos="fade-left" data-aos-delay="400">
+        <div class="card border-0">
+          <img src="https://i.ibb.co/jPwm8wy9/Untitled-design-6-removebg-preview-2.png" class="card-img-top" alt="Giramia Sylvia">
+          <div class="card-body text-center">
+            <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.0625rem;">Giramia Sylvia</h5>
+            <p style="font-family: Quicksand, sans-serif; font-weight: 600; font-size: 1.3125rem;">Promic Coordinator Nyapea</p>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+
+  </div>
+</section>
+
+
+       <!-- Footer -->
+<footer class="text-white bg-dark">
+  <div class="container p-4" style="font-size: 1rem;">
+    <div class="row align-items-center justify-content-between g-3">
+      <div class="col-12 col-md-auto mb-3 mb-md-0">
+           <img src="https://i.ibb.co/zhMCfxYR/3dca4dc8-a7bc-4b9b-a31c-19cbaa815244-removebg-preview.png" alt="Logo" class="img-fluid" style="max-height: 60px;">
+      </div>
+      <div class="col-12 col-md">
+        <ul class="nav justify-content-center justify-content-md-start flex-wrap">
+          <li class="nav-item"><a href="{% url 'about_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size:1.0625rem;">About Us</a></li>
+          <li class="nav-item"><a href="{% url 'programs' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Our Programs</a></li>
+          <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Blogs</a></li>
+          <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-auto">
+        <a href="{% url 'make_payment' %}" class="btn btn-success btn-lg" style="border-radius: 0px;color: #ffffff; background-color:#00703c;font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;border-width: 0;">Donate Now</a>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col text-center">
+        <a href="#" class="text-white text-decoration-none me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Privacy Policy</a>
+        <a href="#" class="text-white text-decoration-none" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,  // Animation duration (ms)
+    once: true      // Only animate once
+  });
+</script>
+<script>
+   function toggleText() {
+    const text = document.getElementById("zorudenaText");
+    const link = document.getElementById("toggleTextLink");
+
+    if (text.classList.contains("text-collapsed")) {
+      text.classList.remove("text-collapsed");
+      text.classList.add("text-expanded");
+      link.innerText = "Read Less";
+    } else {
+      text.classList.remove("text-expanded");
+      text.classList.add("text-collapsed");
+      link.innerText = "Read More";
+    }
+  }
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const counters = document.querySelectorAll(".count-up");
+
+  const animateCount = (el) => {
+    const target = +el.getAttribute("data-target");
+    const duration = 1500;
+    const startTime = performance.now();
+
+    const update = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const current = Math.floor(progress * target);
+
+      el.textContent = current.toLocaleString(); // 1,000 format
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target.toLocaleString();
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        observer.unobserve(entry.target); // run only once
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  counters.forEach(counter => observer.observe(counter));
+});
+</script>
+
+<!-- Before closing </body> -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, // animations fire once
+    duration: 1000, // default animation duration
+  });
+</script>
+
+</body>
+</html>

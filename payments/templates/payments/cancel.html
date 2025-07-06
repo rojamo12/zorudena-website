@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Cancelled</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent-color: #d65e93;
+      --secondary-color: #5941F2;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+      background-color: #fff;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .cancel-box {
+      background-color: #fefefe;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+    }
+
+    .icon {
+      font-size: 3rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      color: var(--accent-color);
+      font-size: 22pt;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 15pt;
+      color: #555;
+    }
+
+    a.btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.7rem 1.5rem;
+      background-color: var(--secondary-color);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    a.btn:hover {
+      background-color: #337cb8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cancel-box" data-aos="fade-up" data-aos-duration="700">
+    <div class="icon">❌</div>
+    <h2 style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 21px;">Payment Cancelled</h2>
+    <p style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 21px;">Your transaction was cancelled. No payment was processed.</p>
+    <a href="/" class="btn" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size: 21px;">Return to Homepage</a>
+  </div>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+
+</body>
+</html>
