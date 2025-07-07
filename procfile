@@ -1,1 +1,1 @@
-web: bash -c "python manage.py migrate && gunicorn zorudena.wsgi --bind 0.0.0.0:$PORT"
+web: gunicorn zorudena.wsgi

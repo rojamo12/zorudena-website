@@ -17,8 +17,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = ['127.0.0.1','localhost','zorudena-website-production.up.railway.app']
-CSRF_TRUSTED_ORIGINS = ['https://zorudena-website-production.up.railway.app']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','zorudena.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://zorudena.up.railway.app']
+
 # Application definition
 
 INSTALLED_APPS = [
