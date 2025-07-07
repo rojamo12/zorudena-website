@@ -42,10 +42,6 @@ def programs_view(request):
     categories = ProgramCategory.objects.prefetch_related('programs').all()
     return render(request, 'programs.html', {'categories': categories})
 
-def partner_request_view(request, slug):
-    program = get_object_or_404(Program, slug=slug)
-    return render(request, 'partner_request.html', {'program': program})
-
 
 def partner_form(request):
     return render(request, 'partner_form.html')
