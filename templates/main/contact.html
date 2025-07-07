@@ -2,27 +2,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <!-- AOS Animation -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+ <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+ 
+ <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+ 
+ <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <style>
-
-       body {
+ <style>
+  body {
      font-family: "Roboto", sans-serif;
   }
 
@@ -33,7 +32,7 @@
   }
 
   .btn-success {
-    background-color: #00703c;
+    background-color:#00703c;
     border-color: #00703c;
   }
 
@@ -72,94 +71,6 @@
     background-color: #f8f9fa !important;
   }
 
-
-      :root {
-  --accent-color:#00703c;
-  --accent-hover: #00703c; /* Slightly darker on hover */
-
-  --secondary-color: #00703c;
-  --secondary-hover: #00703c;
-  --primary-accent: #00703c;
-}
-
-/* All nav links, desktop & mobile */
-.nav-link {
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.nav-link.active {
-  color: var(--secondary-hover);
-  border-bottom: 2px solid var(--secondary-hover); /* optional */
-}
-
-/* Solid Accent Button */
-.btn-accent {
-  background-color: var(--accent-color);
-  color: #fff;
-  border: none;
-  border-radius: 0;
-}
-
-.btn-accent:hover,
-.btn-accent:focus {
-  background-color: var(--accent-hover);
-  color: #fff;
-}
-
-/* Outline Accent Button */
-.btn-outline-accent {
-  background-color: #fff;
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  border-radius: 0;
-}
-
-.btn-outline-accent:hover,
-.btn-outline-accent:focus {
-  background-color: var(--accent-color);
-  color: #fff;
-  border-color: var(--accent-color);
-}
-
-.grayscale-hover {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-.grayscale-hover:hover {
-  filter: grayscale(0%) drop-shadow(0 0 5px #00703c);
-  transform: scale(1.05);
-}
-
-
-        .blog-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 1px solid #eee;
-  }
-
-  .blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  }
-
-  .category-link {
-    transition: color 0.3s ease, padding-left 0.3s ease;
-  }
-
-  .category-link:hover {
-    color: #00703c;
-    padding-left: 8px;
-  }
-
-  .read-more-btn:hover {
-    background-color: #00703c;
-    color: #fff !important;
-    border-color: #00703c;
-  }
-
    .navbar-toggler {
     border: none;
     background-color: transparent;
@@ -172,23 +83,8 @@
     box-shadow: none;
   }
 
-  .sticky-sidebar {
-  position: fixed;
-  top: 25px;              /* Adjust to control how far from top it appears */
-  right: 150px;             /* Push it to the right side of screen */
-  width: 300px;            /* Set a fixed width */
-  z-index: 1000;
-}
-@media (max-width: 768px) {
-  .sticky-sidebar {
-    position: static;
-    width: auto;
-    right: 0;
-  }
-}
-
-    </style>
-  </head>
+</style>
+</head>
 <body>
   <nav class="navbar navbar-light py-1 px-4 px-md-5 " style="font-size: 1rem;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -218,6 +114,8 @@
 <nav class="navbar navbar-expand-lg navbar-light py-3 px-3 " style="font-size: 1rem; margin-bottom: 0;">
   <div class="container-fluid d-flex align-items-center justify-content-between">
 
+
+
     <!-- Toggler (Mobile Only) -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-aos="fade-up">
@@ -237,7 +135,7 @@
           <a class="nav-link {% if request.path == '/blog/' %}active{% endif %}" href="{% url 'blog' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Blog</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact_us' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Contact Us</a>
+          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Contact Us</a>
         </li>
       </ul>
     </div>
@@ -249,127 +147,89 @@
     
   </div>
 </nav>
+<section class="py-5 text-center" style="background-color: #00703c; color: white;" data-aos="fade-up">
 
-
-<!-- Latest Updates Hero Section -->
-<section class="about-us-intro text-white d-flex align-items-center position-relative" style="
-  background: url('https://i.ibb.co/4wfMRZgH/a2802147-c0ae-4272-8397-e78b3ccc2d1b1.jpg') no-repeat center center/cover;
-  height: 38vh;
-  padding: 1.5rem;
-  overflow: hidden;
- 
-  background-size: cover;       /* Ensures the container is fully covered */
-  background-position: 30%; /* Adjust to keep head in view */
-  background-repeat: no-repeat;
-  background-position: center 24%;
-" data-aos="fade-up">
-
-
-  <div class="container" style="padding: 24px;">
-    <div class="row">
-      <div class="col-md-4">
-        <h1 class="display-5" style="margin-bottom: 80px; color:white;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 700;font-style: normal;font-size: 3.75 rem;">News</h1>
-      </div>
-    </div>
+      <!-- ✅ Green brand shadow overlay -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+              background-color: rgba(0, 112, 60, 0.5); z-index: 1;"></div>
+  <div class="container" style="max-width: 84%;">
+    <h1 style="line-height: 1.25;padding-bottom: 20px;color: #ffffff;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px;">Get in Touch</h1>
+    <p class="lead" style="color: #ffffff;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 18px;">We'd love to hear from you – whether it's a question, idea, or opportunity to collaborate.</p>
   </div>
-   <!-- Bezier Curve SVG -->
-  <svg class="position-absolute bottom-0 start-0 w-100" height="60" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-    <path d="M0,30 C360,0 1080,60 1440,30 L1440,60 L0,60 Z" fill="#00703c"></path>
-  </svg>
-
 </section>
+  <!-- Contact Section -->
+  <section class="py-5" id="contact" style="background-color:black;" data-aos="fade-up">
+    <div class="container" style="max-width: 86%;">
+      <div class="row align-items-stretch">
+        <!-- Contact Form -->
+        <div class="col-md-6 mb-4">
+          <div class="p-4 bg-white rounded shadow-sm h-100">
+            <h4 class="mb-4" style="color: #00703c;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 18px;">Send Us a Message</h4>
+            <form id="contactForm" method="POST" novalidate>
+              {% csrf_token %}
+              <div class="mb-3" style="color: #00703c">
+                <label for="name" class="form-label" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px;">Your Name</label>
+                {{ form.name}}
+                <div class="invalid-feedback" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px;">Please enter your name.</div>
+              </div>
+              <div class="mb-3" style="color: #00703c;">
+                <label for="email" class="form-label" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px;">Email Address</label>
+                {{ form.email }}
+                <div class="invalid-feedback" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px;">Please enter a valid email address.</div>
+              </div>
+              <div class="mb-3" style="color: #00703c;">
+                <label for="message" class="form-label" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px;">Your Message</label>
+                {{ form.message }}
+                <div class="invalid-feedback" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px;">Please enter your message.</div>
+              </div>
+              <button type="submit" class="btn" style="border-radius: 0px;font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 18px;background-color: #00703c;color: #ffffff;">Send Message</button>
+            </form>
+          </div>
+        </div>
 
-<section class="py-5 px-3" data-aos="fade-up">
-  <div style="max-width: 900px; margin: 0 auto;">
-    <div class="container py-4">
-
-      <!-- Heading & Lead -->
-      <div class="text-center mb-4">
-        <h2 class="fw-bold" style="font-family: Quicksand, sans-serif; font-size: 24px;">
-          Latest Stories & Updates
-        </h2>
-        <p class="text-muted" style="font-family: Quicksand, sans-serif; font-size: 16px;">
-          Discover how our programs are making an impact through real stories from the ground.
-        </p>
-      </div>
-
-      <!-- Blog Categories -->
-      <div class="mb-4 px-2">
-        <div class="p-3 shadow-sm border" style="background-color: #00703c;">
-          <h4 class="mb-3 text-white" style="font-family: Quicksand, sans-serif; font-size: 18px;">Browse by Category</h4>
-          <div class="d-flex flex-wrap gap-2">
-            <a href="{% url 'blog_by_category' category='Education' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
-              Education and Awareness
-            </a>
-            <a href="{% url 'blog_by_category' category='Child Protection' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
-              Economic Empowerment
-            </a>
-            <a href="{% url 'blog_by_category' category='Health and Nutrition' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
-              Community Health
-            </a>
-            <a href="{% url 'blog_by_category' category='Economic Empowerment' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
-              Environmental Protection
-            </a>
-            <a href="{% url 'blog_by_category' category='Adolescent SRHR' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
-              Human Rights & Governance
-            </a>
+        <!-- Contact Details -->
+        <div class="col-md-6">
+          <div class=" p-4 bg-white rounded shadow-sm h-100">
+            <h4 class="mb-4" style="color: #00703c;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 18px;">Contact Information</h4>
+            <ul class="list-unstyled" style="color: #00703c;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px;">
+              <li class="mb-3">
+                <i class="bi bi-geo-alt-fill me-2" style="color: #00703c;"></i>
+                <strong>Address:</strong><br>
+                  Akir cell,
+                  Zingili Ward,<br>
+                  Paidha Town Council,
+                  Zombo District
+                  P.o Box 630039
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-envelope-fill me-2" style="color: #00703c;"></i>
+                <strong>Email:</strong> <a style="color: hsl(0, 90%, 54%);" href="mailto:opaksolo@gmail.com">info.zorudenauganda2019@gmail.com</a>
+              </li>
+              <li class="mb-3">
+                <i class="bi bi-telephone-fill me-2" style="color: #00703c;"></i>
+                <strong>Phone:</strong> <a style="color: hsl(0, 90%, 54%);" href="tel:+256726264977">+256785394282</a>
+              </li>
+            </ul>
+            <div class="mt-4">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- Blog Posts Grid -->
-      {% if posts %}
-      <div class="row row-cols-1 row-cols-md-2 g-3 mt-2">
-        {% for post in posts %}
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0">
-
-            <!-- Image -->
-            {% if post.image %}
-            <img src="{{ post.image.url }}" alt="{{ post.title }}"
-                 class="card-img-top"
-                 style="height: 180px; object-fit: cover;">
-            {% else %}
-            <img src="https://via.placeholder.com/600x400" alt="No Image"
-                 class="card-img-top"
-                 style="height: 180px; object-fit: cover;">
-            {% endif %}
-
-            <!-- Content -->
-            <div class="card-body py-3 px-3">
-              <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-size: 17px; font-weight: 600;">
-                {{ post.title|striptags|truncatechars:60 }}
-              </h5>
-              <p class="card-text text-muted mb-1" style="font-family: Quicksand, sans-serif; font-size: 14px;">
-                Posted on {{ post.date_posted|date:"F j, Y" }}
-              </p>
-            </div>
-
-            <!-- Footer -->
-            <div class="card-footer bg-transparent border-0 text-start px-3 pb-3">
-              <a href="{% url 'blog_detail' slug=post.slug %}"
-                 class="btn btn-sm px-3"
-                 style="background-color:#00703c; color: white; border-radius: 20px; font-family: Montserrat, sans-serif; font-size: 14px;">
-                Read More →
-              </a>
-            </div>
-
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      {% else %}
-      <p class="text-danger mt-4" style="background-color: #f8bad5;">No blog posts found.</p>
-      {% endif %}
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Donate Section -->
+  <section id="donate" class="py-4 px-3" data-aos="fade-up" style=" background-color: #f8f9fa !important;">
+    <div class="container text-center  p-3" style="max-width: 84%;background-color:hsl(0, 90%, 54%); border-radius: 0px; color: #ffffff;">
+      <h4 class="mb-4" style="color: #ffffff;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px;">Support Our Mission</h4>
+      <p class="lead" style="color: #ffffff;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px;">Help us reach more lives by making a donation today.</p>
+      <a href="{% url 'make_payment' %}" class="btn btn-success btn-lg" style="color: hsl(0, 90%, 54%); border-radius:0px; text-decoration: none;padding: 10px ;background-color:#ffffff; border-width: 0;font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 18px;">Donate Now</a>
+    </div>
+  </section>
 
-
-      
        <!-- Footer -->
-<footer class="text-white bg-dark">
+<footer class="bg-dark text-white">
   <div class="container p-4" style="font-size: 1rem;">
     <div class="row align-items-center justify-content-between g-3">
       <div class="col-12 col-md-auto mb-3 mb-md-0">
@@ -380,7 +240,7 @@
           <li class="nav-item"><a href="{% url 'about_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size:1.0625rem;">About Us</a></li>
           <li class="nav-item"><a href="{% url 'programs' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Our Programs</a></li>
           <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Blogs</a></li>
-          <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Contact Us</a></li>
+          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Contact Us</a></li>
         </ul>
       </div>
       <div class="col-12 col-md-auto">
@@ -395,13 +255,33 @@
     </div>
   </div>
 </footer>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-             <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      const form = e.target;
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    });
+
+     const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', function(e) {
+    // Delay reset slightly to allow submission to complete
+    setTimeout(() => {
+      form.reset();
+    }, 10);
+  });
+  </script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
     duration: 800,  // Animation duration (ms)
     once: true      // Only animate once
   });
 </script>
-        </body>
+</body>
 </html>

@@ -453,7 +453,7 @@
           <a class="nav-link {% if request.path == '/blog/' %}active{% endif %}" href="{% url 'blog' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Blog</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact_us' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Contact Us</a>
+          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Contact Us</a>
         </li>
       </ul>
     </div>
@@ -485,7 +485,7 @@
     We work with all stakeholders in development to eradicate poverty, cherish justice by identification of the needs natural endowment and potentials in the people.
   </p>
    <a href="{% url 'make_payment' %}" class="btn btn-lg mt-3" style="background-color: #00703c; font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem; color: #fff;border-radius:0;">Donate Now</a>
-  <a href="{% url 'contact_us' %}"
+  <a href="{% url 'contact' %}"
      class="btn btn-light mt-3 fade-in-stagger delay-2"
      style="border-radius: 0px; color: #00703c;font-size:1.0625rem;margin-left: 8px;font-optical-sizing: auto;padding: 8px 4px;">
     Get Involved Today 
@@ -881,7 +881,7 @@
           <li class="nav-item"><a href="{% url 'about_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size:1.0625rem;">About Us</a></li>
           <li class="nav-item"><a href="{% url 'programs' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Our Programs</a></li>
           <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Blogs</a></li>
-          <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Contact Us</a></li>
+          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Contact Us</a></li>
         </ul>
       </div>
       <div class="col-12 col-md-auto">

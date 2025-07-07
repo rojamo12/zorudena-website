@@ -4,10 +4,11 @@ from django.utils.html import strip_tags
 from django.utils.text import Truncator
 from .models import Program, BlogPost,TeamMember,ProgramCategory
 from .forms import PartnerRequestForm, ContactMessageForm
+from django.http import HttpResponse
 
 
-def home(request):
-    return render(request, 'home.html')
+def homepage(request):
+    return HttpResponse("Welcome to ZORUDENA Website!")
 
 
 def about_us(request):

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donate to ALFA</title>
+</head>
+<body>
+    <h1>Support Arms of Love Foundation Africa</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="invoice_number">Invoice Number:</label>
+        <input type="text" name="invoice_number" required><br><br>
+
+        <label for="amount">Amount (USD):</label>
+        <input type="number" name="amount" step="0.01" required><br><br>
+
+        <label for="description">Description:</label>
+        <input type="text" name="description" required><br><br>
+
+        <button type="submit">Donate Now</button>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

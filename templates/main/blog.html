@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programs</title>
+    <title>Blog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
@@ -24,7 +23,7 @@
     <style>
 
        body {
-      font-family: "Roboto", sans-serif;
+     font-family: "Roboto", sans-serif;
   }
 
   .navbar-light .navbar-nav .nav-link.active,
@@ -54,7 +53,7 @@
   }
 
   footer a:hover {
-    color:#00703c  !important;
+    color: #00703c !important;
   }
 
   .form-label {
@@ -72,6 +71,7 @@
   section#contact {
     background-color: #f8f9fa !important;
   }
+
 
       :root {
   --accent-color:#00703c;
@@ -97,7 +97,7 @@
 /* Solid Accent Button */
 .btn-accent {
   background-color: var(--accent-color);
-  color: #ffffff;
+  color: #fff;
   border: none;
   border-radius: 0;
 }
@@ -105,7 +105,7 @@
 .btn-accent:hover,
 .btn-accent:focus {
   background-color: var(--accent-hover);
-  color: #ffffff;
+  color: #fff;
 }
 
 /* Outline Accent Button */
@@ -119,7 +119,7 @@
 .btn-outline-accent:hover,
 .btn-outline-accent:focus {
   background-color: var(--accent-color);
-  color: #ffffff;
+  color: #fff;
   border-color: var(--accent-color);
 }
 
@@ -131,66 +131,33 @@
 
 .grayscale-hover:hover {
   filter: grayscale(0%) drop-shadow(0 0 5px #00703c);
-  transform:scale(1.05);
+  transform: scale(1.05);
 }
 
 
-
-      .program-image {
-        transition: all 0.3s ease;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      }
-    
-      .program-image.rotate {
-        transform: rotate(-5deg);
-      }
-    
-      .program-image.scale {
-        transform: scale(1.05);
-      }
-    
-      .program-image.translate {
-        transform: translateY(-10px);
-      }
-    
-      .program-image:hover {
-        transform: scale(1.07) rotate(1deg);
-      }
-
-      /* Animate titles: fade in + slide up */
-  .program-title {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeSlideUp 0.8s ease forwards;
+        .blog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 1px solid #eee;
   }
 
-  /* Delay each program title animation for a nice stagger effect */
-  .row.align-items-center.mb-5:nth-child(odd) .program-title {
-    animation-delay: 0.2s;
-  }
-  .row.align-items-center.mb-5:nth-child(even) .program-title {
-    animation-delay: 0.4s;
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   }
 
-  @keyframes fadeSlideUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .category-link {
+    transition: color 0.3s ease, padding-left 0.3s ease;
   }
 
-  /* Program image hover: scale up & rotate to 0° */
-  .program-image {
-    transition: transform 0.4s ease;
-    transform-origin: center;
-    cursor: pointer;
+  .category-link:hover {
+    color: #00703c;
+    padding-left: 8px;
   }
-  .program-image.rotate {
-    transform: rotate(6deg);
-  }
-  .program-image:hover {
-    transform: scale(1.05) rotate(0deg);
+
+  .read-more-btn:hover {
+    background-color: #00703c;
+    color: #fff !important;
+    border-color: #00703c;
   }
 
    .navbar-toggler {
@@ -204,8 +171,24 @@
     outline: none;
     box-shadow: none;
   }
+
+  .sticky-sidebar {
+  position: fixed;
+  top: 25px;              /* Adjust to control how far from top it appears */
+  right: 150px;             /* Push it to the right side of screen */
+  width: 300px;            /* Set a fixed width */
+  z-index: 1000;
+}
+@media (max-width: 768px) {
+  .sticky-sidebar {
+    position: static;
+    width: auto;
+    right: 0;
+  }
+}
+
     </style>
-</head>
+  </head>
 <body>
   <nav class="navbar navbar-light py-1 px-4 px-md-5 " style="font-size: 1rem;">
     <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -229,7 +212,9 @@
       </div>
     </div>
   </nav>
-  <!-- Main Navbar -->
+  
+
+<!-- Main Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light py-3 px-3 " style="font-size: 1rem; margin-bottom: 0;">
   <div class="container-fluid d-flex align-items-center justify-content-between">
 
@@ -252,7 +237,7 @@
           <a class="nav-link {% if request.path == '/blog/' %}active{% endif %}" href="{% url 'blog' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Blog</a>
         </li>
         <li class="nav-item px-2">
-          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact_us' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Contact Us</a>
+          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Contact Us</a>
         </li>
       </ul>
     </div>
@@ -265,112 +250,124 @@
   </div>
 </nav>
 
-<section class="about-us-intro d-flex align-items-center position-relative" style="
-  background: url('https://i.ibb.co/JWvvBQwD/e3eb1261-c3be-4d85-af0d-2b02e1b851fb-1.jpg') no-repeat center center/cover;
-  height: 40vh;
+
+<!-- Latest Updates Hero Section -->
+<section class="about-us-intro text-white d-flex align-items-center position-relative" style="
+  background: url('https://i.ibb.co/4wfMRZgH/a2802147-c0ae-4272-8397-e78b3ccc2d1b1.jpg') no-repeat center center/cover;
+  height: 38vh;
   padding: 1.5rem;
   overflow: hidden;
-
-  
+ 
   background-size: cover;       /* Ensures the container is fully covered */
   background-position: 30%; /* Adjust to keep head in view */
   background-repeat: no-repeat;
-  background-position: center 8.5%;
-  
-  
-" data-aos="fade-down">
+  background-position: center 24%;
+" data-aos="fade-up">
 
-  <div class="container">
+
+  <div class="container" style="padding: 24px;">
     <div class="row">
       <div class="col-md-4">
-        <h1 class="display-5 px-4" style="color: #ffffff; font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 42px;line-height: 1.25;">Our Programs</h1>
+        <h1 class="display-5" style="margin-bottom: 80px; color:white;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 700;font-style: normal;font-size: 3.75 rem;">News</h1>
       </div>
     </div>
   </div>
-
-  <!-- Bezier Curve SVG -->
+   <!-- Bezier Curve SVG -->
   <svg class="position-absolute bottom-0 start-0 w-100" height="60" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <path d="M0,30 C360,0 1080,60 1440,30 L1440,60 L0,60 Z" fill="#00703c"></path>
   </svg>
+
 </section>
 
-<section class="py-5" style="margin-bottom: 32px;">
-  <div class="container px-4">
-    {% for category in categories %}
-      <div class="mb-5">
-        <!-- Category Title -->
-        <h2 class="text-dark mb-4" style="font-family: Quicksand, sans-serif; font-weight: 700;">
-          {{ category.name }}
+<section class="py-5 px-3" data-aos="fade-up">
+  <div style="max-width: 900px; margin: 0 auto;">
+    <div class="container py-4">
+
+      <!-- Heading & Lead -->
+      <div class="text-center mb-4">
+        <h2 class="fw-bold" style="font-family: Quicksand, sans-serif; font-size: 24px;">
+          Latest Stories & Updates
         </h2>
-        {% if category.description %}
-          <p class="mb-3 text-muted">{{ category.description }}</p>
-        {% endif %}
+        <p class="text-muted" style="font-family: Quicksand, sans-serif; font-size: 16px;">
+          Discover how our programs are making an impact through real stories from the ground.
+        </p>
+      </div>
 
-        <!-- Programs under category -->
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          {% for program in category.programs.all %}
-            <div class="col" data-aos="slide-left">
-              <div class="card border-0 shadow-sm h-100">
-                {% if program.image %}
-                  <img src="{{ program.image.url }}" alt="{{ program.title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
-                {% endif %}
-                <div class="card-body d-flex flex-column">
-                  <h5 class="card-title" style="font-family: Quicksand, sans-serif;">{{ program.title }}</h5>
-                  <p class="card-text">{{ program.description|striptags|truncatechars:100 }}</p>
-                  <a href="{% url 'partner_request' slug=program.slug %}" class="btn btn-sm mt-auto" style="background-color: #00703c; color: white; border-radius: 0;">Partner with Us →</a>
-                </div>
-              </div>
+      <!-- Blog Categories -->
+      <div class="mb-4 px-2">
+        <div class="p-3 shadow-sm border" style="background-color: #00703c;">
+          <h4 class="mb-3 text-white" style="font-family: Quicksand, sans-serif; font-size: 18px;">Browse by Category</h4>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="{% url 'blog_by_category' category='Education' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Education and Awareness
+            </a>
+            <a href="{% url 'blog_by_category' category='Child Protection' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Economic Empowerment
+            </a>
+            <a href="{% url 'blog_by_category' category='Health and Nutrition' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Community Health
+            </a>
+            <a href="{% url 'blog_by_category' category='Economic Empowerment' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Environmental Protection
+            </a>
+            <a href="{% url 'blog_by_category' category='Adolescent SRHR' %}" class="badge text-bg-light px-3 py-2 text-decoration-none" style="border-radius: 0;">
+              Human Rights & Governance
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Posts Grid -->
+      {% if posts %}
+      <div class="row row-cols-1 row-cols-md-2 g-3 mt-2">
+        {% for post in posts %}
+        <div class="col">
+          <div class="card h-100 shadow-sm border-0">
+
+            <!-- Image -->
+            {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}"
+                 class="card-img-top"
+                 style="height: 180px; object-fit: cover;">
+            {% else %}
+            <img src="https://via.placeholder.com/600x400" alt="No Image"
+                 class="card-img-top"
+                 style="height: 180px; object-fit: cover;">
+            {% endif %}
+
+            <!-- Content -->
+            <div class="card-body py-3 px-3">
+              <h5 class="card-title" style="font-family: Quicksand, sans-serif; font-size: 17px; font-weight: 600;">
+                {{ post.title|striptags|truncatechars:60 }}
+              </h5>
+              <p class="card-text text-muted mb-1" style="font-family: Quicksand, sans-serif; font-size: 14px;">
+                Posted on {{ post.date_posted|date:"F j, Y" }}
+              </p>
             </div>
-          {% endfor %}
+
+            <!-- Footer -->
+            <div class="card-footer bg-transparent border-0 text-start px-3 pb-3">
+              <a href="{% url 'blog_detail' slug=post.slug %}"
+                 class="btn btn-sm px-3"
+                 style="background-color:#00703c; color: white; border-radius: 20px; font-family: Montserrat, sans-serif; font-size: 14px;">
+                Read More →
+              </a>
+            </div>
+
+          </div>
         </div>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </div>
-</section>
-
-
-<!-- Impact Section -->
-<section class="py-5 text-center" data-aos="fade-up" style="background: linear-gradient(hsl(0, 0%, 97%), hsl(0, 0%, 95%));">
-  <div class="container" style="max-width: 86%;">
-    <div class="row g-4 align-items-stretch">
-
-      <!-- Column 1: Heading -->
-      <div class="col-md-3 col-sm-6 d-flex align-items-center justify-content-center">
-        <h4 style="line-height: 1.3;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px;">
-          Our Impact at a Glance
-        </h4>
-      </div>
-
-      <!-- Column 2: Metric 1 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="p-4 shadow-sm h-100 text-white" style="background-color: #00703c;">
-          <h3 style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px;">12,000+</h3>
-          <p class="mb-0" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px; color: hsl(208, 7%, 80%);">Children Reached</p>
-        </div>
-      </div>
-
-      <!-- Column 3: Metric 2 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="text-white p-4 shadow-sm h-100" style="background-color: #00703c; ">
-          <h3 style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px; ">150+</h3>
-          <p class="mb-0" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-style: normal;font-weight: 400; font-size: 18px; color: hsl(208, 7%, 80%);">Communities Served</p>
-        </div>
-      </div>
-
-      <!-- Column 4: Metric 3 -->
-      <div class="col-md-3 col-sm-6">
-        <div class="text-white p-4 shadow-sm h-100" style="background-color: #00703c; ">
-          <h3 style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px;">500+</h3>
-          <p class="mb-0" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-style: normal;font-weight: 400; font-size: 18px;color: hsl(208, 7%, 80%);">Volunteers Engaged</p>
-        </div>
-      </div>
-
+      {% else %}
+      <p class="text-danger mt-4" style="background-color: #f8bad5;">No blog posts found.</p>
+      {% endif %}
     </div>
   </div>
 </section>
 
 
-     
+
+      
        <!-- Footer -->
 <footer class="text-white bg-dark">
   <div class="container p-4" style="font-size: 1rem;">
@@ -383,7 +380,7 @@
           <li class="nav-item"><a href="{% url 'about_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size:1.0625rem;">About Us</a></li>
           <li class="nav-item"><a href="{% url 'programs' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Our Programs</a></li>
           <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Blogs</a></li>
-          <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Contact Us</a></li>
+          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Contact Us</a></li>
         </ul>
       </div>
       <div class="col-12 col-md-auto">
@@ -398,77 +395,13 @@
     </div>
   </div>
 </footer>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+             <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 800,
-    once: true
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    // Toggle Read More / Show Less logic
-    const readMoreButtons = document.querySelectorAll(".read-more-btn");
-    const showLessButtons = document.querySelectorAll(".show-less-btn");
-
-    readMoreButtons.forEach(button => {
-      button.addEventListener("click", function () {
-        const targetId = this.getAttribute("data-target");
-        const target = document.getElementById(targetId);
-        const showLessBtn = target.querySelector(".show-less-btn");
-
-        target.classList.add("show");
-        this.style.display = "none";
-        showLessBtn.style.display = "inline";
-      });
-    });
-
-    showLessButtons.forEach(button => {
-      button.style.display = "none";
-      button.addEventListener("click", function () {
-        const targetId = this.getAttribute("data-target");
-        const target = document.getElementById(targetId);
-        const readMoreBtn = document.querySelector(`.read-more-btn[data-target='${targetId}']`);
-
-        target.classList.remove("show");
-        this.style.display = "none";
-        readMoreBtn.style.display = "inline";
-      });
-    });
-
-    // Count-up animation
-    const counters = document.querySelectorAll('.count-up');
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const speed = 200;
-        const increment = target / speed;
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count + increment);
-          setTimeout(updateCount, 10);
-        } else {
-          counter.innerText = target;
-        }
-      };
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            updateCount();
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 }); // reduced from 1.0 to ensure it starts when visible
-
-      observer.observe(counter);
-    });
+    duration: 800,  // Animation duration (ms)
+    once: true      // Only animate once
   });
 </script>
-
-    </body>
+        </body>
 </html>
-
-
-

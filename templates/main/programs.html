@@ -1,0 +1,471 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+
+       body {
+      font-family: "Roboto", sans-serif;
+  }
+
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #00703c;
+    font-weight: 600;
+  }
+
+  .btn-success {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  .btn-success:hover {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  .btn-primary {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  .btn-primary:hover {
+    background-color: #00703c;
+    border-color: #00703c;
+  }
+
+  footer a:hover {
+    color:#00703c  !important;
+  }
+
+  .form-label {
+    font-weight: 600;
+  }
+
+  .nav-link {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .text-primary {
+    color: #00703c !important;
+  }
+
+  section#contact {
+    background-color: #f8f9fa !important;
+  }
+
+      :root {
+  --accent-color:#00703c;
+  --accent-hover: #00703c; /* Slightly darker on hover */
+
+  --secondary-color: #00703c;
+  --secondary-hover: #00703c;
+  --primary-accent: #00703c;
+}
+
+/* All nav links, desktop & mobile */
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  color: var(--secondary-hover);
+  border-bottom: 2px solid var(--secondary-hover); /* optional */
+}
+
+/* Solid Accent Button */
+.btn-accent {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 0;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: var(--accent-hover);
+  color: #ffffff;
+}
+
+/* Outline Accent Button */
+.btn-outline-accent {
+  background-color: #fff;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 0;
+}
+
+.btn-outline-accent:hover,
+.btn-outline-accent:focus {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+
+.grayscale-hover {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.grayscale-hover:hover {
+  filter: grayscale(0%) drop-shadow(0 0 5px #00703c);
+  transform:scale(1.05);
+}
+
+
+
+      .program-image {
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+    
+      .program-image.rotate {
+        transform: rotate(-5deg);
+      }
+    
+      .program-image.scale {
+        transform: scale(1.05);
+      }
+    
+      .program-image.translate {
+        transform: translateY(-10px);
+      }
+    
+      .program-image:hover {
+        transform: scale(1.07) rotate(1deg);
+      }
+
+      /* Animate titles: fade in + slide up */
+  .program-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 0.8s ease forwards;
+  }
+
+  /* Delay each program title animation for a nice stagger effect */
+  .row.align-items-center.mb-5:nth-child(odd) .program-title {
+    animation-delay: 0.2s;
+  }
+  .row.align-items-center.mb-5:nth-child(even) .program-title {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Program image hover: scale up & rotate to 0° */
+  .program-image {
+    transition: transform 0.4s ease;
+    transform-origin: center;
+    cursor: pointer;
+  }
+  .program-image.rotate {
+    transform: rotate(6deg);
+  }
+  .program-image:hover {
+    transform: scale(1.05) rotate(0deg);
+  }
+
+   .navbar-toggler {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .navbar-toggler:focus,
+  .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+  }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-light py-1 px-4 px-md-5 " style="font-size: 1rem;">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+          <!-- Logo (Left) -->
+    <a class="navbar-brand me-auto" href="#">
+      <img src="https://i.ibb.co/zhMCfxYR/3dca4dc8-a7bc-4b9b-a31c-19cbaa815244-removebg-preview.png" alt="Logo" class="img-fluid" style="max-height: 60px;">
+      <label for="" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:600;font-style: normal;font-size:2rem;color: #00703c;">ZORUDENA UG</label>
+    </a>
+    
+      <!-- Social Media Links (Left) -->
+      <div class="me-3">
+        <a href="#" class="text-dark me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-facebook" style="color: #00703c;"></i></a>
+        <a href="#" class="text-dark me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-twitter" style="color: #00703c;"></i></a>
+        <a href="#" class="text-dark me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-instagram" style="color: #00703c;"></i></a>
+      </div>
+  
+      <!-- Contact Info (Right) -->
+      <div class="text-end small">
+        <span class="me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-telephone-fill" style="color: #00703c;"></i> +256785394282</span>
+        <span  style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1rem;color: #6c757d;"><i class="bi bi-envelope-fill" style="color: #00703c;"></i> info.zorudenauganda2019@gmail.com</span>
+      </div>
+    </div>
+  </nav>
+  <!-- Main Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light py-3 px-3 " style="font-size: 1rem; margin-bottom: 0;">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Toggler (Mobile Only) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-aos="fade-up">
+      <span class="navbar-toggler-icon" style="color: #00703c;"></span>
+    </button>
+
+    <!-- Centered Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{% url 'about_us' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">About Us</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/programs/' %}active{% endif %}" href="{% url 'programs' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Our Programs</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/blog/' %}active{% endif %}" href="{% url 'blog' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Blog</a>
+        </li>
+        <li class="nav-item px-2">
+          <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem;">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Donate Button (Right) -->
+    <div class="ms-auto d-none d-lg-block">
+      <a href="{% url 'make_payment' %}" class="btn btn-lg" style="background-color: #00703c; font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:500;font-style: normal;font-size:1.0625rem; color: #fff;border-radius:0;">Donate Now</a>
+    
+    
+  </div>
+</nav>
+
+<section class="about-us-intro d-flex align-items-center position-relative" style="
+  background: url('https://i.ibb.co/JWvvBQwD/e3eb1261-c3be-4d85-af0d-2b02e1b851fb-1.jpg') no-repeat center center/cover;
+  height: 40vh;
+  padding: 1.5rem;
+  overflow: hidden;
+
+  
+  background-size: cover;       /* Ensures the container is fully covered */
+  background-position: 30%; /* Adjust to keep head in view */
+  background-repeat: no-repeat;
+  background-position: center 8.5%;
+  
+  
+" data-aos="fade-down">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1 class="display-5 px-4" style="color: #ffffff; font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 42px;line-height: 1.25;">Our Programs</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bezier Curve SVG -->
+  <svg class="position-absolute bottom-0 start-0 w-100" height="60" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,30 C360,0 1080,60 1440,30 L1440,60 L0,60 Z" fill="#00703c"></path>
+  </svg>
+</section>
+
+<section class="py-5" style="margin-bottom: 32px;">
+  <div class="container px-4">
+    {% for category in categories %}
+      <div class="mb-5">
+        <!-- Category Title -->
+        <h2 class="text-dark mb-4" style="font-family: Quicksand, sans-serif; font-weight: 700;">
+          {{ category.name }}
+        </h2>
+        {% if category.description %}
+          <p class="mb-3 text-muted">{{ category.description }}</p>
+        {% endif %}
+
+        <!-- Programs under category -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          {% for program in category.programs.all %}
+            <div class="col" data-aos="slide-left">
+              <div class="card border-0 shadow-sm h-100">
+                {% if program.image %}
+                  <img src="{{ program.image.url }}" alt="{{ program.title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                {% endif %}
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title" style="font-family: Quicksand, sans-serif;">{{ program.title }}</h5>
+                  <p class="card-text">{{ program.description|striptags|truncatechars:100 }}</p>
+                  <a href="{% url 'partner_request' slug=program.slug %}" class="btn btn-sm mt-auto" style="background-color: #00703c; color: white; border-radius: 0;">Partner with Us →</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- Impact Section -->
+<section class="py-5 text-center" data-aos="fade-up" style="background: linear-gradient(hsl(0, 0%, 97%), hsl(0, 0%, 95%));">
+  <div class="container" style="max-width: 86%;">
+    <div class="row g-4 align-items-stretch">
+
+      <!-- Column 1: Heading -->
+      <div class="col-md-3 col-sm-6 d-flex align-items-center justify-content-center">
+        <h4 style="line-height: 1.3;font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px;">
+          Our Impact at a Glance
+        </h4>
+      </div>
+
+      <!-- Column 2: Metric 1 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="p-4 shadow-sm h-100 text-white" style="background-color: #00703c;">
+          <h3 style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px;">12,000+</h3>
+          <p class="mb-0" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 400;font-style: normal;font-size: 18px; color: hsl(208, 7%, 80%);">Children Reached</p>
+        </div>
+      </div>
+
+      <!-- Column 3: Metric 2 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="text-white p-4 shadow-sm h-100" style="background-color: #00703c; ">
+          <h3 style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px; ">150+</h3>
+          <p class="mb-0" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-style: normal;font-weight: 400; font-size: 18px; color: hsl(208, 7%, 80%);">Communities Served</p>
+        </div>
+      </div>
+
+      <!-- Column 4: Metric 3 -->
+      <div class="col-md-3 col-sm-6">
+        <div class="text-white p-4 shadow-sm h-100" style="background-color: #00703c; ">
+          <h3 style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;font-size: 32px;">500+</h3>
+          <p class="mb-0" style="font-family:Quicksand, sans-serif;font-optical-sizing: auto;font-style: normal;font-weight: 400; font-size: 18px;color: hsl(208, 7%, 80%);">Volunteers Engaged</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+     
+       <!-- Footer -->
+<footer class="text-white bg-dark">
+  <div class="container p-4" style="font-size: 1rem;">
+    <div class="row align-items-center justify-content-between g-3">
+      <div class="col-12 col-md-auto mb-3 mb-md-0">
+           <img src="https://i.ibb.co/zhMCfxYR/3dca4dc8-a7bc-4b9b-a31c-19cbaa815244-removebg-preview.png" alt="Logo" class="img-fluid" style="max-height: 60px;">
+      </div>
+      <div class="col-12 col-md">
+        <ul class="nav justify-content-center justify-content-md-start flex-wrap">
+          <li class="nav-item"><a href="{% url 'about_us' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size:1.0625rem;">About Us</a></li>
+          <li class="nav-item"><a href="{% url 'programs' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Our Programs</a></li>
+          <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Blogs</a></li>
+          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link px-2 text-white" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-auto">
+        <a href="{% url 'make_payment' %}" class="btn btn-success btn-lg" style="border-radius: 0px;color: #ffffff; background-color:#00703c;font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;border-width: 0;">Donate Now</a>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col text-center">
+        <a href="#" class="text-white text-decoration-none me-3" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Privacy Policy</a>
+        <a href="#" class="text-white text-decoration-none" style="font-family:Montserrat, sans-serif;font-optical-sizing: auto;font-weight:400;font-style: normal;font-size: 1.0625rem;">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    // Toggle Read More / Show Less logic
+    const readMoreButtons = document.querySelectorAll(".read-more-btn");
+    const showLessButtons = document.querySelectorAll(".show-less-btn");
+
+    readMoreButtons.forEach(button => {
+      button.addEventListener("click", function () {
+        const targetId = this.getAttribute("data-target");
+        const target = document.getElementById(targetId);
+        const showLessBtn = target.querySelector(".show-less-btn");
+
+        target.classList.add("show");
+        this.style.display = "none";
+        showLessBtn.style.display = "inline";
+      });
+    });
+
+    showLessButtons.forEach(button => {
+      button.style.display = "none";
+      button.addEventListener("click", function () {
+        const targetId = this.getAttribute("data-target");
+        const target = document.getElementById(targetId);
+        const readMoreBtn = document.querySelector(`.read-more-btn[data-target='${targetId}']`);
+
+        target.classList.remove("show");
+        this.style.display = "none";
+        readMoreBtn.style.display = "inline";
+      });
+    });
+
+    // Count-up animation
+    const counters = document.querySelectorAll('.count-up');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const speed = 200;
+        const increment = target / speed;
+
+        if (count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            updateCount();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 }); // reduced from 1.0 to ensure it starts when visible
+
+      observer.observe(counter);
+    });
+  });
+</script>
+
+    </body>
+</html>
