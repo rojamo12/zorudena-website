@@ -4,7 +4,7 @@ from django.conf import settings  # ✅ Add this
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('main.urls')),
+    path('', include('main.urls')), 
     path('admin/', admin.site.urls),
     path('payments/', include('payments.urls')),
     # other apps...
